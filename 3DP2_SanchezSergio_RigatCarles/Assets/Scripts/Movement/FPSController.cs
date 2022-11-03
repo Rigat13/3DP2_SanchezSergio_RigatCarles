@@ -43,6 +43,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] int numberOfJumps = 2;
     int jumpsDone;
 
+    [SerializeField] float jumplessGravityMultiplier = -9.81f;
     float a_gravity;
     float v0_jumpSpeed;
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -64,12 +65,15 @@ public class FPSController : MonoBehaviour
 
         th_current_timeToMaxHeight = th1_timeToMaxHeight;
         updateJumpValues();
+        setJumplessGravity();
     }
 
     void Update() 
     {
         inputUpdate();
         updateLockKeyState();
+                    Debug.Log(a_gravity);
+
     }
 
     void FixedUpdate()
@@ -167,6 +171,11 @@ public class FPSController : MonoBehaviour
         a_gravity = (-2 * h_maxHeight) / (th_current_timeToMaxHeight * th_current_timeToMaxHeight);
     }
 
+    void setJumplessGravity()
+    {
+        a_gravity = jumplessGravityMultiplier;
+    }
+
     void move()
     {
         Vector3 movement = calculateMovement();
@@ -196,7 +205,7 @@ public class FPSController : MonoBehaviour
 
 
         if (!previousOnGround && onGround) land(onGround);
-        if (!onGround && !peakReached && vy_verticalSpeed < 0) reachPeak();
+        if (!onGround && !peakReached && vy_verticalSpeed < 0) reachPeak(!previousOnGround);
     }
 
     void land(bool onRealGround)
@@ -205,13 +214,17 @@ public class FPSController : MonoBehaviour
         peakReached = false; 
 
         th_current_timeToMaxHeight = th1_timeToMaxHeight;
+        if (onRealGround) setJumplessGravity();
     }
 
-    void reachPeak()
+    void reachPeak(bool hasJumped)
     {
         peakReached = true; 
-        th_current_timeToMaxHeight = th2_timeToMinHeight;
-        updateJumpValues();
+        if (hasJumped) 
+        {
+            th_current_timeToMaxHeight = th2_timeToMinHeight;
+            updateJumpValues();
+        }
     }
 
 
