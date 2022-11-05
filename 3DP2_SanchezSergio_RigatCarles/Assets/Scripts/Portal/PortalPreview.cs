@@ -13,6 +13,7 @@ public class PortalPreview : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(transform.localScale);
         initialScale = transform.localScale;
     }
 

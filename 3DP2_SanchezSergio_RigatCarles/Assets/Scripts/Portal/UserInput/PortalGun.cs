@@ -5,8 +5,8 @@ using UnityEngine;
 public class PortalGun : MonoBehaviour
 {
     [SerializeField] GameObject previewPortal;
-    [SerializeField] GameObject bluePortal;
-    [SerializeField] GameObject orangePortal;
+    [SerializeField] Portal bluePortal;
+    [SerializeField] Portal orangePortal;
     [SerializeField] Camera cam;
     [SerializeField] float maxShootDist = float.MaxValue;
     [SerializeField] LayerMask portalMask;
@@ -68,10 +68,11 @@ public class PortalGun : MonoBehaviour
         return false;
     }
 
-    private void shootPortal(GameObject portal)
+    private void shootPortal(Portal portal)
     {
-        portal.SetActive(true);
-        portal.transform.position = previewPortal.transform.position;
-        portal.transform.rotation = previewPortal.transform.rotation;
+        portal.gameObject.SetActive(true);
+        portal.gameObject.transform.position = previewPortal.transform.position;
+        portal.gameObject.transform.rotation = previewPortal.transform.rotation;
+        portal.setScale(portalResizer.getScale());
     }
 }
