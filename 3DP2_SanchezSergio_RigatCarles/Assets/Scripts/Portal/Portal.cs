@@ -9,11 +9,14 @@ public class Portal : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] Transform player;
     [SerializeField] float scale = 1.0f;
+
     Vector3 initialScale;
+    float initialCameraFOV;
 
     void Start()
     {
         initialScale = transform.localScale;
+        initialCameraFOV = cam.fieldOfView;
     }
 
     private void Update() 
@@ -36,6 +39,12 @@ public class Portal : MonoBehaviour
     void resize()
     {
         transform.localScale = initialScale * scale;
+        otherPortal.resizeCamera(scale);
+    }
+
+    public void resizeCamera(float otherScale)
+    {
+        cam.fieldOfView = initialCameraFOV * otherScale;
     }
     
     public float getScale() { return scale; }
