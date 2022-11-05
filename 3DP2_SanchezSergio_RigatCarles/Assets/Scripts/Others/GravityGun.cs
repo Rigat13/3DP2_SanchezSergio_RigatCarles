@@ -23,7 +23,6 @@ public class GravityGun : MonoBehaviour
     {
         if(Input.GetKeyDown(gravityKey))
         {
-            Debug.Log("GravityShoot");
             takenObject = gravityShoot();
             if (takenObject != null)
             {

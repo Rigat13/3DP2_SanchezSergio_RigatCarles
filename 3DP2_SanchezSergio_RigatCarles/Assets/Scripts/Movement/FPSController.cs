@@ -72,8 +72,6 @@ public class FPSController : MonoBehaviour
     {
         inputUpdate();
         updateLockKeyState();
-                    Debug.Log(a_gravity);
-
     }
 
     void FixedUpdate()
