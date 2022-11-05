@@ -6,6 +6,15 @@ public class Teleportable : MonoBehaviour
 {
     [SerializeField] float offsetAmount;
     [SerializeField] bool resizable;
+    [SerializeField] Vector3 minLocalScale = new Vector3(0.1f, 0.1f, 0.1f);
+    [SerializeField] Vector3 maxLocalScale = new Vector3(10.0f, 10.0f, 10.0f);
+
+    Vector3 initialScale;
+
+    void Start()
+    {
+        initialScale = transform.localScale;
+    }
 
     void OnTriggerEnter(Collider other) 
     {
@@ -42,5 +51,14 @@ public class Teleportable : MonoBehaviour
     void resize(float scale)
     {
         transform.localScale *= scale;
+        clampScale();
+    }
+    
+    void clampScale()
+    {
+        if (transform.localScale.magnitude < minLocalScale.magnitude)
+            transform.localScale = minLocalScale;
+        else if (transform.localScale.magnitude > maxLocalScale.magnitude)
+            transform.localScale = maxLocalScale;
     }
 }
