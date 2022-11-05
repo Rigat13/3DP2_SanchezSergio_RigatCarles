@@ -48,7 +48,7 @@ public class FPSController : MonoBehaviour
     float v0_jumpSpeed;
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
     
-    float vy_verticalSpeed;
+    public float vy_verticalSpeed;
     bool onGround;
     bool onCeiling;
     bool peakReached;

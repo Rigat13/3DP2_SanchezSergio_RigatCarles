@@ -8,6 +8,13 @@ public class Portal : MonoBehaviour
     public Transform virtualPortal;
     [SerializeField] Camera cam;
     [SerializeField] Transform player;
+    [SerializeField] float scale = 1.0f;
+    Vector3 initialScale;
+
+    void Start()
+    {
+        initialScale = transform.localScale;
+    }
 
     private void Update() 
     {
@@ -25,4 +32,12 @@ public class Portal : MonoBehaviour
         float distCameraPortal = (otherPortal.transform.position - otherPortal.cam.transform.position).magnitude;
         otherPortal.cam.nearClipPlane = distCameraPortal;
     }
+
+    void resize()
+    {
+        transform.localScale = initialScale * scale;
+    }
+    
+    public float getScale() { return scale; }
+    public void setScale(float scale) { this.scale = scale; resize(); }
 }

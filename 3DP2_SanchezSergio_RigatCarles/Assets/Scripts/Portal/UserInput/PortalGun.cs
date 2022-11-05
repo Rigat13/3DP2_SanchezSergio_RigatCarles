@@ -10,6 +10,7 @@ public class PortalGun : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] float maxShootDist = float.MaxValue;
     [SerializeField] LayerMask portalMask;
+    [SerializeField] PortalResizer portalResizer;
 
     bool previewActiveBlue = false;
     bool previewActiveOrange = false;
@@ -59,10 +60,11 @@ public class PortalGun : MonoBehaviour
             {
                 previewPortal.transform.position = hitInfo.point;
                 previewPortal.transform.rotation = Quaternion.LookRotation(hitInfo.normal);
-                return previewPortal.GetComponent<PortalPreviewScript>().isInValidPosition(cam);
+                portalResizer.enableResize();
+                return previewPortal.GetComponent<PortalPreview>().isInValidPosition(cam);
             }
-            return false;
         }
+        portalResizer.disableResize();
         return false;
     }
 

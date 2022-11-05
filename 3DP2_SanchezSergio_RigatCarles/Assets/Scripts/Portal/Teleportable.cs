@@ -5,12 +5,12 @@ using UnityEngine;
 public class Teleportable : MonoBehaviour
 {
     [SerializeField] float offsetAmount;
+    [SerializeField] bool resizable;
 
     void OnTriggerEnter(Collider other) 
     {
         if (other.TryGetComponent(out Portal portal))
         {
-            Debug.Log("TELEPORT!");
             Vector3 l_Position = portal.virtualPortal.InverseTransformPoint(transform.position);
             Vector3 l_Direction = portal.virtualPortal.InverseTransformDirection(transform.forward);
 
@@ -18,6 +18,7 @@ public class Teleportable : MonoBehaviour
             l_Position.z += offsetAmount;
             transform.position = portal.otherPortal.transform.TransformPoint(l_Position);
 
+            if (resizable) resize(portal.getScale());
             tryToFixPlayerYaw();
             tryToFixRigidbodyVelocity(portal);
         }
@@ -36,5 +37,10 @@ public class Teleportable : MonoBehaviour
             Vector3 l_velocity = portal.virtualPortal.InverseTransformDirection(rb.velocity);
             rb.velocity = portal.otherPortal.transform.TransformDirection(l_velocity);
         }
+    }
+
+    void resize(float scale)
+    {
+        transform.localScale *= scale;
     }
 }
