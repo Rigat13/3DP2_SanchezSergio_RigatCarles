@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PortalGun : MonoBehaviour
 {
@@ -10,16 +11,31 @@ public class PortalGun : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] float maxShootDist = float.MaxValue;
     [SerializeField] LayerMask portalMask;
+<<<<<<< Updated upstream:3DP2_SanchezSergio_RigatCarles/Assets/Scripts/Portal/UserInput/PortalGun.cs
     [SerializeField] PortalResizer portalResizer;
+=======
+    [SerializeField] Sprite emptyCrosshair;
+    [SerializeField] Sprite blueCrosshair;
+    [SerializeField] Sprite orangeCrosshair;
+    [SerializeField] Sprite bothCrosshair;
+    [SerializeField] Image crosshair;
+>>>>>>> Stashed changes:3DP2_SanchezSergio_RigatCarles/Assets/Scripts/PortalGun.cs
 
     bool previewActiveBlue = false;
     bool previewActiveOrange = false;
+    bool bluePortalActive = false;
+    bool orangePortalActive = false;
+
 
     void Update()
     {
         checkBluePortal();
         checkOrangePortal();    
         previewPortal.SetActive(previewActiveBlue || previewActiveOrange);
+        if (!bluePortalActive && !orangePortalActive) crosshair.sprite = emptyCrosshair;
+        if (bluePortalActive && orangePortalActive) crosshair.sprite = bothCrosshair;
+        if (!bluePortalActive && orangePortalActive) crosshair.sprite = orangeCrosshair;
+        if (bluePortalActive && !orangePortalActive) crosshair.sprite = blueCrosshair;
     }
 
     void checkBluePortal()
@@ -31,8 +47,10 @@ public class PortalGun : MonoBehaviour
             if (previewActiveBlue)
             {
                 shootPortal(bluePortal);
+                bluePortalActive = true;
             }
             previewActiveBlue = false;
+            
         }
     }
 
@@ -45,6 +63,7 @@ public class PortalGun : MonoBehaviour
             if (previewActiveOrange)
             {
                 shootPortal(orangePortal);
+                orangePortalActive = true;
             }
             previewActiveOrange = false;
         }
