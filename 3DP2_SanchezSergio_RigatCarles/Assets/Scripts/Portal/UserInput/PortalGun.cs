@@ -11,15 +11,12 @@ public class PortalGun : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] float maxShootDist = float.MaxValue;
     [SerializeField] LayerMask portalMask;
-<<<<<<< Updated upstream:3DP2_SanchezSergio_RigatCarles/Assets/Scripts/Portal/UserInput/PortalGun.cs
     [SerializeField] PortalResizer portalResizer;
-=======
     [SerializeField] Sprite emptyCrosshair;
     [SerializeField] Sprite blueCrosshair;
     [SerializeField] Sprite orangeCrosshair;
     [SerializeField] Sprite bothCrosshair;
     [SerializeField] Image crosshair;
->>>>>>> Stashed changes:3DP2_SanchezSergio_RigatCarles/Assets/Scripts/PortalGun.cs
 
     bool previewActiveBlue = false;
     bool previewActiveOrange = false;
