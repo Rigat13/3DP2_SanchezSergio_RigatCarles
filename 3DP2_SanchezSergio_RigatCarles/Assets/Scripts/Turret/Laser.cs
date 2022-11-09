@@ -37,7 +37,7 @@ public class Laser : MonoBehaviour
             if (hitInfo.collider.gameObject.TryGetComponent(out LaserButton laserButton))
                 laserButton.pressed();
             if (hitInfo.collider.gameObject.TryGetComponent(out Refraction refraction))
-                refraction.activateReflection(true,hitInfo.point, hitInfo.normal);
+                refraction.activateReflection(true,hitInfo.point, Vector3.Reflect(this.r.direction,hitInfo.normal));
             if (hitInfo.collider.gameObject.TryGetComponent(out PlayerStats playerStats))
                 playerStats.takeDamage(1);
         }
