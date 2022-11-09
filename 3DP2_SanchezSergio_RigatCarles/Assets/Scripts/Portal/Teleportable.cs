@@ -27,7 +27,7 @@ public class Teleportable : MonoBehaviour
             l_Position.z += offsetAmount;
             transform.position = portal.otherPortal.transform.TransformPoint(l_Position);
 
-            if (resizable) resize(portal.getScale());
+            if (resizable) resize(portal.getResizeScale());
             tryToFixPlayerYaw();
             tryToFixRigidbodyVelocity(portal);
         }

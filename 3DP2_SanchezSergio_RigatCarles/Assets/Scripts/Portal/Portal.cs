@@ -49,4 +49,6 @@ public class Portal : MonoBehaviour
     
     public float getScale() { return scale; }
     public void setScale(float scale) { this.scale = scale; resize(); }
+
+    public float getResizeScale() { return scale / otherPortal.getScale(); }
 }
