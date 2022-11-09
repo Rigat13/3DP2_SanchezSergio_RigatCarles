@@ -7,7 +7,16 @@ public class Laser : MonoBehaviour
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] LayerMask layerMask;
     [SerializeField] float maxRayDist = 200f;
-    bool isEnabled = true;
+    bool isEnabled = false;
+    Ray r;
+    bool useCustomRay = false;
+
+
+    public void setRay(Ray r)
+    {
+        this.r = r;
+        useCustomRay = true;
+    }
 
     void Update()
     {
@@ -15,13 +24,22 @@ public class Laser : MonoBehaviour
         if (!isEnabled)
             return;
 
+        if(!useCustomRay)
+        {
+            this.r = new Ray(transform.position, transform.forward);
+        }
 
         Ray r = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(r, out RaycastHit hitInfo, maxRayDist, layerMask))
         {
-            lineRenderer.SetPosition(1, new Vector3(0f, 0f, hitInfo.distance));
+            lineRenderer.SetPosition(0, r.origin);
+            lineRenderer.SetPosition(1, hitInfo.point);
             if (hitInfo.collider.gameObject.TryGetComponent(out LaserButton laserButton))
                 laserButton.pressed();
+            if (hitInfo.collider.gameObject.TryGetComponent(out Refraction refraction))
+                refraction.activateReflection(true,hitInfo.point, hitInfo.normal);
+            if (hitInfo.collider.gameObject.TryGetComponent(out PlayerStats playerStats))
+                playerStats.takeDamage(1);
         }
         else
         {

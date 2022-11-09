@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
 
     public void takeDamage(float damage)
     {
+        Debug.Log("Taken "+damage+" damage");
         currentHealth -= damage;
         if (currentHealth <= 0.0f)
         {
@@ -39,11 +40,9 @@ public class PlayerStats : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Entra");
         if (collider.gameObject.tag == "deadzone")
         {
-            takeDamage(2);
-            Debug.Log("Get deadzoned");
+            takeDamage(9999999999999);
         }
     }
 

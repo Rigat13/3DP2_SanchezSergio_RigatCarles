@@ -11,6 +11,8 @@ public class Deleteable : MonoBehaviour
         if (collider.gameObject.tag == "red gel" || collider.gameObject.tag == "deadzone")
         {
             Debug.Log("Me desaparesco");
+            gameObject.SetActive(false);
+            /*
             Color newColor = mat.color;
             if (newColor.a > 0)
             {
@@ -23,6 +25,7 @@ public class Deleteable : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
+            */
         }
     }
 
