@@ -86,13 +86,27 @@ public class GravityGun : MonoBehaviour
     {
         takenObject.position = attachPosition.position;
         takenObject.rotation = attachPosition.rotation;
+        disableObjectTeleporting();
     }
 
     private void detachObject(float throwSpeed)
     {
+        enableObjectTeleporting();
         takenObject.isKinematic = false;
         takenObject.velocity = (throwSpeed * attachPosition.forward);
         takenObject.transform.parent = null;
         takenObject = null;
+    }
+
+    private void enableObjectTeleporting()
+    {
+        if (takenObject.gameObject.TryGetComponent(out Teleportable teleportableObject))
+            teleportableObject.enableTeleporting();
+    }
+
+    private void disableObjectTeleporting()
+    {
+        if (takenObject.gameObject.TryGetComponent(out Teleportable teleportableObject))
+            teleportableObject.disableTeleporting();
     }
 }

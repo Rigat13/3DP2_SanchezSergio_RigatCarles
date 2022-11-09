@@ -8,7 +8,8 @@ public class Teleportable : MonoBehaviour
     [SerializeField] bool resizable;
     [SerializeField] Vector3 minLocalScale = new Vector3(0.1f, 0.1f, 0.1f);
     [SerializeField] Vector3 maxLocalScale = new Vector3(10.0f, 10.0f, 10.0f);
-
+    bool teleportable = true;
+    
     Vector3 initialScale;
 
     void Start()
@@ -18,7 +19,7 @@ public class Teleportable : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.TryGetComponent(out Portal portal))
+        if (other.TryGetComponent(out Portal portal) && teleportable)
         {
             Vector3 l_Position = portal.virtualPortal.InverseTransformPoint(transform.position);
             Vector3 l_Direction = portal.virtualPortal.InverseTransformDirection(transform.forward);
@@ -61,4 +62,7 @@ public class Teleportable : MonoBehaviour
         else if (transform.localScale.magnitude > maxLocalScale.magnitude)
             transform.localScale = maxLocalScale;
     }
+
+    public void disableTeleporting() { teleportable = false; }
+    public void enableTeleporting() { teleportable = true; }
 }
