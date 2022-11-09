@@ -5,14 +5,35 @@ Enllaç de WeTransfer:
 Enllaç de YouTube: 
 
 Crèdits:
-_(més enllà de les bases establertes a classe)_
+- Bases establertes a classe fetes conjuntament:
+	- Portal Gun
+	- Portals
+	- Teleport
+	- Companion Cubes
+	- Gravity Gun
+	- Teleport Cubes
+	- Turrets
+	- Refraction Cube
+	- Blocking Cube
 
 - Sergio Sánchez
-	- 
-	
+	- Escenari
+	- Dead zones
+	- Physic Surfaces
+	- Game Over / Retry
+	- Crosshair
 
 - Carles Rigat
-	- 
+	- Ajustos de la Portal Gun i el Teleport
+	- Resizing
+	- UI
+	
+
+TODO:
+	- Doors / Keys (botó i clau)
+	- Checkpoint
+	- Sound
+	
 
 Assets externs:
 
