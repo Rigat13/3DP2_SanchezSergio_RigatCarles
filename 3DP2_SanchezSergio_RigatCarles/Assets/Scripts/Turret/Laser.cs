@@ -28,11 +28,10 @@ public class Laser : MonoBehaviour
         {
             this.r = new Ray(transform.position, transform.forward);
         }
-
-        Ray r = new Ray(transform.position, transform.forward);
+        lineRenderer.SetPosition(0, r.origin);
+        
         if (Physics.Raycast(r, out RaycastHit hitInfo, maxRayDist, layerMask))
         {
-            lineRenderer.SetPosition(0, r.origin);
             lineRenderer.SetPosition(1, hitInfo.point);
             if (hitInfo.collider.gameObject.TryGetComponent(out LaserButton laserButton))
                 laserButton.pressed();
@@ -43,7 +42,7 @@ public class Laser : MonoBehaviour
         }
         else
         {
-            lineRenderer.SetPosition(1, new Vector3(0f, 0f, maxRayDist));
+            lineRenderer.SetPosition(1, r.direction*maxRayDist);
         }
     }
 
