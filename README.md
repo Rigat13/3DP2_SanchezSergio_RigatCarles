@@ -27,20 +27,23 @@ Crèdits:
 	- Ajustos de la Portal Gun i el Teleport
 	- Resizing
 	- UI
-	
-
-TODO:
 	- Doors / Keys (botó i clau)
-	- Checkpoint
+
+Extres sobrants fets parcialment:
 	- Sound
-	
+
+Extres no fets:
+	- Checkpoint
 
 Assets externs:
 
 	Models i Textures:
-- PortalAssets NOTA: De moment IGNORAT pel seu pes
+- PortalAssets NOTA: IGNORAT pel seu pes
+- Portal Radio NOTA: IGNORAT pel seu pes
 
 	Àudio:
-- 
+- Enchante feat Mr Stabalina - Slynk - https://www.youtube.com/watch?v=gQcjGcWWymE
+- Portal Radio NOTA: IGNORAT pel seu pes
+
 	Fonts:
 - Montserrat Font - Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly - https://fonts.google.com/specimen/Montserrat?query=Montserrat
