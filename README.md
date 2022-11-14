@@ -1,8 +1,8 @@
 # 3DP2_SanchezSergio_RigatCarles
 
-Enllaç de GitHub: 
-Enllaç de WeTransfer: 
-Enllaç de YouTube: 
+Enllaç de WeTransfer (projecte complet): https://we.tl/t-oeIzEMtHxW
+Enllaç de GitHub (nota: certs assets ignorats per la seva mida): https://github.com/Rigat13/3DP2_SanchezSergio_RigatCarles
+Enllaç de YouTube: https://youtu.be/KwOqv-xwUys
 
 Crèdits:
 - Bases establertes a classe fetes conjuntament:
