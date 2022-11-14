@@ -19439,7 +19439,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1114739025}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &833815080
 GameObject:
@@ -23276,8 +23276,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7227548760348614951}
-  - {fileID: 3535245119573684177}
   - {fileID: 794469402}
+  - {fileID: 3535245119573684177}
   m_Father: {fileID: 1863835449}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48393,8 +48393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalPreview: {fileID: 550588724}
-  minScale: 0.3
-  maxScale: 3
+  minScale: 0.5
+  maxScale: 2
   scaleSpeed: 3
 --- !u!114 &6196657907400945373
 MonoBehaviour:
