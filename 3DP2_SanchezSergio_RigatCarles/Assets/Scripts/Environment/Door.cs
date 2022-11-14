@@ -18,6 +18,12 @@ public class Door : MonoBehaviour
         return true;
     }
 
+    public void directUnlock()
+    {
+        locked = false;
+        open();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && !locked)

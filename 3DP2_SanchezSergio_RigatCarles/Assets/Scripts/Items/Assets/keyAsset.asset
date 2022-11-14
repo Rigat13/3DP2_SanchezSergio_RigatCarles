@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1014717de2e0a4d9a73845be74bb5c, type: 3}
   m_Name: keyAsset
   m_EditorClassIdentifier: 
-  keyCodeToUnclock: 0
+  indexToUnclock: 1
