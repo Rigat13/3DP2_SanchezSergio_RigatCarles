@@ -10,7 +10,7 @@ public class KeyAsset : ConsumableAsset
 
     override public bool consume(GameObject consumer)
     {
-        if (consumer.TryGetComponent(out PlayerStats playerStats))
+        if (consumer.gameObject.CompareTag("Player"))
         {
             return doorToUnclock.unlock(keyCodeToUnclock);;
         }
