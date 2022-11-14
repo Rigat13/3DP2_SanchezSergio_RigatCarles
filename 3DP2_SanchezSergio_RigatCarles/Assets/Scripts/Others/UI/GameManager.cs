@@ -9,19 +9,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        playerController.enabled = false;
+        playerController.enabled = true;
+        playerController.disableMove();
         portalGun.enabled = false;
     }
 
     public void startGame()
     {
         playerController.enabled = true;
+        playerController.enableMove();
         portalGun.enabled = true;
     }
 
     public void endGame()
     {
         playerController.enabled = true;
-        portalGun.enabled = true;
+        playerController.disableMove();
+        portalGun.enabled = false;
     }
 }

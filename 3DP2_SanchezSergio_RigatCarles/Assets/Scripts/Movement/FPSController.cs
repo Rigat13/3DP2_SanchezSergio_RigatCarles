@@ -57,7 +57,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] KeyCode angleLockKey = KeyCode.I;
     [SerializeField] KeyCode mouseLockKey = KeyCode.O;
     private bool angleLocked = false;
-
+    private bool canMove = false;
 
     void Awake()
     {
@@ -70,7 +70,7 @@ public class FPSController : MonoBehaviour
 
     void Update() 
     {
-        inputUpdate();
+        if (canMove) inputUpdate();
         updateLockKeyState();
     }
 
@@ -236,4 +236,6 @@ public class FPSController : MonoBehaviour
         return new Vector3(Mathf.Sin((yaw+90) * Mathf.Deg2Rad), 0.0f, Mathf.Cos((yaw+90) * Mathf.Deg2Rad));
     }
 
+    public void enableMove() { this.canMove = true; }
+    public void disableMove() { this.canMove = false; }
 }
