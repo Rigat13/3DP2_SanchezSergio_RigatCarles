@@ -2659,6 +2659,17 @@ Transform:
   m_Father: {fileID: 532879920}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177316660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8816665935551850759, guid: 84f737fd1b8ea134fb04499b693fc642, type: 3}
+  m_PrefabInstance: {fileID: 3535245119573684176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393be35721c0d554ca38d8a2bce88f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &178346844
 GameObject:
   m_ObjectHideFlags: 0
@@ -22757,11 +22768,6 @@ Transform:
   m_Father: {fileID: 1170029293}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1157897714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3535245120731050530, guid: 84f737fd1b8ea134fb04499b693fc642, type: 3}
-  m_PrefabInstance: {fileID: 3535245119573684176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1160261860
 GameObject:
   m_ObjectHideFlags: 0
@@ -34590,6 +34596,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1875633704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 54724997191770527, guid: 84f737fd1b8ea134fb04499b693fc642, type: 3}
+  m_PrefabInstance: {fileID: 3535245119573684176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e7f5458bc4b5946bf929f4bfccb766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1881430767
 GameObject:
   m_ObjectHideFlags: 0
@@ -47494,7 +47511,22 @@ MonoBehaviour:
   currentHealth: 100
   timeToRegen: 1000
   regenCounter: 0
-  gameOverHud: {fileID: 1157897714}
+  gameOverHud: {fileID: 1875633704}
+  healthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 177316660}
+        m_TargetAssemblyTypeName: LifeUIManager, Assembly-CSharp
+        m_MethodName: updateHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6196657907400945372
 MonoBehaviour:
   m_ObjectHideFlags: 0
