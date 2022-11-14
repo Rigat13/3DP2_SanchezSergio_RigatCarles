@@ -26,7 +26,7 @@ public class TitleScreen : MonoBehaviour
 
     public void gameOver()
     {
-        canvasAnimator.SetTrigger("start");
+        canvasAnimator.SetTrigger("gameOver");
         gameOverEvent.Invoke();
     }
 }
