@@ -5,6 +5,7 @@ Enllaç de WeTransfer (projecte complet): https://we.tl/t-oeIzEMtHxW
 Enllaç de GitHub (nota: certs assets ignorats per la seva mida): https://github.com/Rigat13/3DP2_SanchezSergio_RigatCarles
 
 Enllaç de YouTube: https://youtu.be/KwOqv-xwUys
+
 	Radio Run (i mostrant com els cubs bloquegen làsers): https://youtu.be/PL2cvRJz_Zw
 
 Crèdits:
