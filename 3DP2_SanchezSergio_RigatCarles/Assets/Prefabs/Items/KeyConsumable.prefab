@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a853b914a8c65d4b9e36799f4dd863e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  consumableAsset: {fileID: 11400000, guid: 715ca8ed3d9d65945a1aa65a6f67344f, type: 2}
+  consumableAsset: {fileID: 0}
   animator: {fileID: 7012265566449723475}
   consumeTime: 0.5
 --- !u!95 &7012265566449723475
@@ -274,8 +274,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 1.52, z: 0.2}
-  m_Center: {x: 0, y: -1.13, z: 0}
+  m_Size: {x: 0.20000002, y: 0.73653305, z: 0.20000002}
+  m_Center: {x: 0, y: -0.7382669, z: 0}
 --- !u!135 &7012265566449723478
 SphereCollider:
   m_ObjectHideFlags: 0

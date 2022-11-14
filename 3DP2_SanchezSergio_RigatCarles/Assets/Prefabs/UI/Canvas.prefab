@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 3535245120632304613}
   - component: {fileID: 3535245120632304612}
   - component: {fileID: 3535245120632304611}
-  - component: {fileID: 461917291917139240}
+  - component: {fileID: 4429868248728244356}
   m_Layer: 5
   m_Name: Retry button
   m_TagString: Untagged
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b238d86eb9a95e040b54918f193f116e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &461917291917139240
+--- !u!95 &4429868248728244356
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 3535245120872136271}
   - component: {fileID: 3535245120872136270}
   - component: {fileID: 3535245120872136269}
-  - component: {fileID: 145727430885148444}
+  - component: {fileID: 5234582150828585518}
   m_Layer: 5
   m_Name: Exit button
   m_TagString: Untagged
@@ -1103,7 +1103,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!95 &145727430885148444
+--- !u!95 &5234582150828585518
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286151167
+    rgba: 7961087
   m_fontColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286151167
+    rgba: 7961087
   m_fontColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

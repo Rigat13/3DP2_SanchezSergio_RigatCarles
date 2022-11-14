@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Create Key Consumer")]
 public class KeyAsset : ConsumableAsset
 {
-    [SerializeField] Door doorToUnclock;
-    public int keyCodeToUnclock = 0;
+    public int indexToUnclock = 0;
 
     override public bool consume(GameObject consumer)
     {
-        if (consumer.gameObject.CompareTag("Player"))
+        if (consumer.TryGetComponent<DoorUnlocker>(out DoorUnlocker doorUnlocker))
         {
-            return doorToUnclock.unlock(keyCodeToUnclock);;
+            doorUnlocker.unlockDoor(indexToUnclock);
+            return true;
         }
         return false;
     }
